@@ -1,184 +1,115 @@
 <!doctype html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>Portail des services</title>
+  <meta name="description" content="Prêt de matériel, salles, logement, sport, aides et santé : tous les services du campus et leurs demandes en ligne.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portail des services">
+  <meta property="og:description" content="Prêt de matériel, salles, logement, sport, aides et santé : tous les services du campus et leurs demandes en ligne.">
+  <meta property="og:image" content="https://portail.example/img/camera-800.jpg">
+  <script type="module" src="/src/main.js"></script>
 </head>
 <body>
 
-  <!-- En-tête et navigation -->
   <header>
-    <div>
-      <span aria-hidden="true">■</span>
-      <span>Portail des services</span>
-    </div>
-    <nav aria-label="Principal">
-      <button type="button">Menu</button>
+    <a href="./index.html" aria-current="page"><span aria-hidden="true">■</span> Portail des services</a>
+    <nav aria-label="Principale">
+      <ul>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./espace.html#demandes">Mes demandes</a></li>
+        <li><a href="#">Aide</a></li>
+        <li><a href="./espace.html">Mon espace</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- Contenu principal -->
   <main id="contenu">
-    
-    <!-- Section d'introduction et recherche -->
     <section>
-      <h1>Tous les services du campus, au même endroit</h1>
+      <h1>Tous les services du campus, <span>au même endroit</span></h1>
       <p>Prêt de matériel, salles, logement, sport, aides et santé : faites vos demandes en ligne.</p>
-      
-      <form action="#" method="get">
-        <label for="recherche">Rechercher un service...</label>
-        <input type="search" id="recherche" name="q" placeholder="Rechercher un service...">
+      <form action="./services.html" role="search">
+        <label for="recherche">Rechercher un service</label>
+        <input type="search" id="recherche" name="q" placeholder="Rechercher un service…">
         <button type="submit">Rechercher</button>
       </form>
     </section>
 
-    <!-- Parcourir par catégorie -->
     <section>
       <h2>Parcourir par catégorie</h2>
       <ul>
-        <li><a href="services.html?categorie=materiel">Prêt de matériel <span>4 services</span></a></li>
-        <li><a href="services.html?categorie=salles">Salles <span>3 services</span></a></li>
-        <li><a href="services.html?categorie=logement">Logement <span>3 services</span></a></li>
-        <li><a href="services.html?categorie=sport">Sport <span>3 services</span></a></li>
-        <li><a href="services.html?categorie=aides">Aides <span>2 services</span></a></li>
-        <li><a href="services.html?categorie=sante">Santé <span>2 services</span></a></li>
+        <li><a href="./services.html?categorie=materiel">Prêt de matériel <span>4 services</span></a></li>
+        <li><a href="./services.html?categorie=salles">Salles <span>3 services</span></a></li>
+        <li><a href="./services.html?categorie=logement">Logement <span>3 services</span></a></li>
+        <li><a href="./services.html?categorie=sport">Sport <span>3 services</span></a></li>
+        <li><a href="./services.html?categorie=aide">Aides <span>2 services</span></a></li>
+        <li><a href="./services.html?categorie=sante">Santé <span>2 services</span></a></li>
       </ul>
     </section>
 
-    <!-- Services à la une -->
     <section>
       <h2>Services à la une</h2>
-      <article>
-        <img src="/img/camera-800.jpg" alt="Appareil photo hybride avec deux objectifs sur fond clair" width="800" height="533">
-        <span>Prêt de matériel</span>
-        <h3><a href="./service.html?id=2">Prêt de caméra</a></h3>
-        <p>Une caméra hybride et deux objectifs, pour un tournage de cours ou de projet.</p>
-        <p>3 places</p>
-        <a href="./service.html?id=2">Voir la fiche</a>
-      </article>
+      <ul>
+        <li>
+          <article>
+            <img src="/img/camera-800.jpg" srcset="/img/camera-480.webp 480w, /img/camera-800.webp 800w, /img/camera-1200.webp 1200w" sizes="(min-width: 64rem) 33vw, 100vw" width="1200" height="800" alt="" loading="lazy">
+            <p>Prêt de matériel</p>
+            <h3><a href="./service.html?id=2">Prêt de caméra</a></h3>
+            <p>Une caméra hybride et deux objectifs, pour un tournage de cours ou de projet.</p>
+            <p>3 places</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <img src="/img/salle-800.jpg" srcset="/img/salle-480.webp 480w, /img/salle-800.webp 800w, /img/salle-1200.webp 1200w" sizes="(min-width: 64rem) 33vw, 100vw" width="1200" height="800" alt="" loading="lazy">
+            <p>Salles</p>
+            <h3><a href="./service.html?id=5">Réservation de salle</a></h3>
+            <p>Une salle de travail de quatre à douze places, à l'heure.</p>
+            <p>8 places</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <img src="/img/sport-800.jpg" srcset="/img/sport-480.webp 480w, /img/sport-800.webp 800w, /img/sport-1200.webp 1200w" sizes="(min-width: 64rem) 33vw, 100vw" width="1200" height="800" alt="" loading="lazy">
+            <p>Sport</p>
+            <h3><a href="./service.html?id=11">Inscription au sport universitaire</a></h3>
+            <p>Une activité sportive par semestre, de l'escalade au volley.</p>
+            <p>40 places</p>
+          </article>
+        </li>
+      </ul>
     </section>
-
   </main>
 
-  <!-- Pied de page -->
   <footer>
-    <ul>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Accessibilité : partiellement conforme</a></li>
-      <li><a href="#">Mentions légales</a></li>
-    </ul>
+    <section>
+      <h2>Le portail</h2>
+      <ul>
+        <li><a href="./services.html">Tous les services</a></li>
+        <li><a href="./espace.html#demandes">Mes demandes</a></li>
+        <li><a href="#">Aide</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Contact</h2>
+      <address>
+        <p>Accueil vie étudiante</p>
+        <p><a href="tel:+33200000000">02 00 00 00 00</a></p>
+        <p>Lundi au vendredi, 9 h à 17 h</p>
+      </address>
+    </section>
+    <section>
+      <h2>Informations</h2>
+      <ul>
+        <li><a href="#">Accessibilité : partiellement conforme</a></li>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Plan du site</a></li>
+      </ul>
+    </section>
     <p>© 2026 Portail des services</p>
   </footer>
 
 </body>
-=======
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <title>Portail des services</title>
-    <script type="module" src="/src/main.js"></script>
-  </head>
-  <body>
-    <header>
-      <a href="./index.html" aria-current="page">Portail des services</a>
-      <nav aria-label="Principale">
-        <ul>
-          <li><a href="./services.html">Services</a></li>
-          <li><a href="./espace.html#demandes">Mes demandes</a></li>
-          <li><a href="./aide.html">Aide</a></li>
-          <li><a href="./espace.html">Mon espace</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main id="contenu">
-      <section>
-        <h1>Tous les services du campus, <span>au même endroit</span></h1>
-        <p>Prêt de matériel, salles, logement, sport, aides et santé : faites vos demandes en ligne.</p>
-
-        <form action="./services.html" role="search">
-          <label for="recherche">Rechercher un service</label>
-          <input type="search" id="recherche" name="q" placeholder="Rechercher un service…">
-          <button type="submit">Rechercher</button>
-        </form>
-      </section>
-
-      <section>
-        <h2>Parcourir par catégorie</h2>
-        <ul>
-          <li><a href="./services.html?categorie=materiel">Prêt de matériel</a> <span>4 services</span></li>
-          <li><a href="./services.html?categorie=salles">Salles</a> <span>3 services</span></li>
-          <li><a href="./services.html?categorie=logement">Logement</a> <span>3 services</span></li>
-          <li><a href="./services.html?categorie=sport">Sport</a> <span>3 services</span></li>
-          <li><a href="./services.html?categorie=aide">Aides</a> <span>2 services</span></li>
-          <li><a href="./services.html?categorie=sante">Santé</a> <span>2 services</span></li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Services à la une</h2>
-        <ul>
-          <li>
-            <article>
-              <img src="/img/camera-800.jpg" width="800" height="533" alt="">
-              <p>Prêt de matériel</p>
-              <h3><a href="./service.html?id=2">Prêt de caméra</a></h3>
-              <p>Une caméra hybride et deux objectifs, pour un tournage de cours ou de projet.</p>
-              <p>3 places</p>
-            </article>
-          </li>
-          <li>
-            <article>
-              <img src="/img/salle-800.jpg" width="800" height="533" alt="">
-              <p>Salles</p>
-              <h3><a href="./service.html?id=5">Réservation de salle</a></h3>
-              <p>Une salle de travail de quatre à douze places, à l'heure.</p>
-              <p>8 places</p>
-            </article>
-          </li>
-          <li>
-            <article>
-              <img src="/img/sport-800.jpg" width="800" height="533" alt="">
-              <p>Sport</p>
-              <h3><a href="./service.html?id=11">Inscription au sport universitaire</a></h3>
-              <p>Une activité sportive par semestre, de l'escalade au volley.</p>
-              <p>40 places</p>
-            </article>
-          </li>
-        </ul>
-      </section>
-    </main>
-
-    <footer>
-      <section>
-        <h2>Le portail</h2>
-        <ul>
-          <li><a href="./services.html">Tous les services</a></li>
-          <li><a href="./espace.html#demandes">Mes demandes</a></li>
-          <li><a href="./aide.html">Aide</a></li>
-        </ul>
-      </section>
-      <section>
-        <h2>Contact</h2>
-        <address>
-          <p>Accueil vie étudiante</p>
-          <p><a href="tel:+33200000000">02 00 00 00 00</a></p>
-          <p>Lundi au vendredi, 9 h à 17 h</p>
-        </address>
-      </section>
-      <section>
-        <h2>Informations</h2>
-        <ul>
-          <li><a href="./accessibilite.html">Accessibilité : partiellement conforme</a></li>
-          <li><a href="./mentions-legales.html">Mentions légales</a></li>
-          <li><a href="./plan.html">Plan du site</a></li>
-        </ul>
-      </section>
-      <p>© 2026 Portail des services</p>
-    </footer>
-  </body>
-
 </html>

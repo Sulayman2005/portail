@@ -3,149 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>Faire une demande · Portail des services</title>
+  <meta name="description" content="Faites votre demande de service : coordonnées, date souhaitée, créneau et commentaire.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Faire une demande">
+  <meta property="og:description" content="Faites votre demande de service : coordonnées, date souhaitée, créneau et commentaire.">
+  <meta property="og:image" content="https://portail.example/img/camera-800.jpg">
+  <script type="module" src="/src/main.js"></script>
 </head>
 <body>
 
-  <!-- En-tête et navigation -->
   <header>
-    <div>
-      <span aria-hidden="true">■</span>
-      <span>Portail des services</span>
-    </div>
-    <nav aria-label="Principal">
+    <a href="./index.html"><span aria-hidden="true">■</span> Portail des services</a>
+    <nav aria-label="Principale">
       <ul>
-        <li><a href="services.html" aria-current="true">Services</a></li>
-        <li><a href="espace.html">Mes demandes</a></li>
+        <li><a href="./services.html" aria-current="true">Services</a></li>
+        <li><a href="./espace.html#demandes">Mes demandes</a></li>
         <li><a href="#">Aide</a></li>
-        <li><a href="espace.html">Mon espace</a></li>
+        <li><a href="./espace.html">Mon espace</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Contenu principal -->
   <main id="contenu">
-    <nav aria-label="Fil d'Ariane">
+    <nav aria-label="Fil d’Ariane">
       <ol>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="service.html">Prêt de caméra</a></li>
+        <li><a href="./index.html">Accueil</a></li>
+        <li><a href="./service.html?id=2">Prêt de caméra</a></li>
         <li><span aria-current="page">Demande</span></li>
       </ol>
     </nav>
 
     <h1>Faire une demande</h1>
-    <p>Les champs marqués d'un astérisque sont obligatoires.</p>
+    <p>Les champs marqués d'un astérisque (*) sont obligatoires.</p>
 
-    <!-- Formulaire et informations latérales -->
-    <div>
-      <form action="#" method="post">
+    <form action="./espace.html" method="get">
 
-        <!-- Vos coordonnées -->
-        <fieldset>
-          <legend>Vos coordonnées</legend>
+      <fieldset>
+        <legend>Vos coordonnées</legend>
 
-          <div>
-            <label for="nom">Nom *</label>
-            <input type="text" id="nom" name="nom" value="Martin" autocomplete="family-name" required>
-          </div>
+        <div>
+          <label for="nom">Nom *</label>
+          <input id="nom" type="text" name="nom" autocomplete="family-name" required aria-describedby="nom-err">
+          <p id="nom-err" class="erreur"></p>
+        </div>
 
-          <div>
-            <label for="prenom">Prénom *</label>
-            <input type="text" id="prenom" name="prenom" value="Camille" autocomplete="given-name" required>
-          </div>
+        <div>
+          <label for="prenom">Prénom *</label>
+          <input id="prenom" type="text" name="prenom" autocomplete="given-name" required aria-describedby="prenom-err">
+          <p id="prenom-err" class="erreur"></p>
+        </div>
 
-          <div>
-            <label for="email">Adresse e-mail *</label>
-            <input type="email" id="email" name="email" value="camille.martin@" autocomplete="email"
-                   aria-invalid="true" aria-describedby="email-aide email-erreur" required>
-            <small id="email-aide">Format : nom@domaine.fr</small>
-            <span id="email-erreur" role="alert">Saisissez une adresse complète, par exemple nom@domaine.fr.</span>
-          </div>
-        </fieldset>
+        <div>
+          <label for="email">Adresse e-mail *</label>
+          <input id="email" type="email" name="email" autocomplete="email" required aria-describedby="email-aide email-err">
+          <p id="email-aide">Format : nom@domaine.fr</p>
+          <p id="email-err" class="erreur"></p>
+        </div>
 
-        <!-- Votre demande -->
-        <fieldset>
-          <legend>Votre demande</legend>
+        <div>
+          <label for="ville">Ville</label>
+          <input id="ville" type="text" name="ville" autocomplete="address-level2" aria-describedby="ville-err">
+          <p id="ville-err" class="erreur"></p>
+        </div>
+      </fieldset>
 
-          <div>
-            <label for="service">Service *</label>
-            <select id="service" name="service" required>
-              <option value="pret-camera" selected>Prêt de caméra</option>
-            </select>
-          </div>
+      <fieldset>
+        <legend>Votre demande</legend>
 
-          <div>
-            <label for="date-souhaitee">Date souhaitée *</label>
-            <input type="text" id="date-souhaitee" name="date_souhaitee" value="14/10/2026" required>
-          </div>
+        <div>
+          <label for="service">Service *</label>
+          <select id="service" name="service" required aria-describedby="service-err">
+            <option value="">Choisir un service</option>
+            <option value="10">Accompagnement garantie locative</option>
+            <option value="8">Aide à la recherche de logement</option>
+            <option value="14">Aide d'urgence</option>
+            <option value="9">Colocation étudiante</option>
+            <option value="4">Impression grand format</option>
+            <option value="11">Inscription au sport universitaire</option>
+            <option value="15">Job étudiant sur le campus</option>
+            <option value="3">Prêt d'ordinateur portable</option>
+            <option value="2">Prêt de caméra</option>
+            <option value="1">Prêt de matériel</option>
+            <option value="12">Prêt de vélo</option>
+            <option value="16">Rendez-vous médecin</option>
+            <option value="5">Réservation de salle</option>
+            <option value="13">Salle de musculation</option>
+            <option value="7">Salle de projet</option>
+            <option value="17">Soutien psychologique</option>
+            <option value="6">Studio d'enregistrement</option>
+          </select>
+          <p id="service-err" class="erreur"></p>
+        </div>
 
-          <fieldset>
-            <legend>Créneau *</legend>
-            <label>
-              <input type="radio" name="creneau" value="matin" checked> Matin
-            </label>
-            <label>
-              <input type="radio" name="creneau" value="apres-midi"> Après-midi
-            </label>
-          </fieldset>
+        <div>
+          <label for="date-souhaitee">Date souhaitée *</label>
+          <input type="date" id="date-souhaitee" name="date_souhaitee" autocomplete="off" required aria-describedby="date-souhaitee-err">
+          <p id="date-souhaitee-err" class="erreur"></p>
+        </div>
 
-          <div>
-            <label for="commentaire">Commentaire</label>
-            <textarea id="commentaire" name="commentaire" rows="4" maxlength="500"
-                      aria-describedby="commentaire-aide">Tournage du projet vidéo de groupe.</textarea>
-            <small id="commentaire-aide">500 caractères au plus</small>
-          </div>
-
-          <div>
-            <label>
-              <input type="checkbox" name="cgu" checked required> J'accepte que mes coordonnées servent au traitement de la demande. *
-            </label>
-          </div>
+        <fieldset aria-describedby="creneau-err">
+          <legend>Créneau *</legend>
+          <input type="radio" id="creneau-matin" name="creneau" value="matin" required>
+          <label for="creneau-matin">Matin</label>
+          <input type="radio" id="creneau-apres-midi" name="creneau" value="apres-midi" required>
+          <label for="creneau-apres-midi">Après-midi</label>
+          <p id="creneau-err" class="erreur"></p>
         </fieldset>
 
         <div>
-          <button type="submit">Envoyer la demande</button>
-          <a href="service.html">Annuler</a>
+          <label for="commentaire">Commentaire</label>
+          <textarea id="commentaire" name="commentaire" rows="4" maxlength="500" aria-describedby="commentaire-aide commentaire-err"></textarea>
+          <p id="commentaire-aide">500 caractères au plus</p>
+          <p id="commentaire-err" class="erreur"></p>
         </div>
 
-      </form>
+        <div>
+          <input type="checkbox" id="cgu" name="cgu" required aria-describedby="cgu-err">
+          <label for="cgu">J'accepte que mes coordonnées servent au traitement de la demande. *</label>
+          <p id="cgu-err" class="erreur"></p>
+        </div>
+      </fieldset>
 
-      <!-- Informations sur le service -->
-      <aside aria-label="Informations sur le service">
-        <h2>Prêt de caméra</h2>
-        <p>Délai : 2 jours ouvrés</p>
-        <p>3 places disponibles</p>
-        <p>Bâtiment A, rez-de-chaussée</p>
-      </aside>
-    </div>
+      <div>
+        <button type="submit">Envoyer la demande</button>
+        <a href="./services.html">Annuler</a>
+      </div>
+
+    </form>
+
+    <aside aria-labelledby="titre-info-service">
+      <h2 id="titre-info-service">Prêt de caméra</h2>
+      <p>Délai : 2 jours ouvrés</p>
+      <p>3 places disponibles</p>
+      <p>Bâtiment A, rez-de-chaussée</p>
+    </aside>
   </main>
 
-  <!-- Pied de page -->
   <footer>
-    <div>
-      <div>
-        <h2>Le portail</h2>
-        <ul>
-          <li><a href="services.html">Tous les services</a></li>
-          <li><a href="espace.html">Mes demandes</a></li>
-          <li><a href="#">Aide</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Contact</h2>
+    <section>
+      <h2>Le portail</h2>
+      <ul>
+        <li><a href="./services.html">Tous les services</a></li>
+        <li><a href="./espace.html#demandes">Mes demandes</a></li>
+        <li><a href="#">Aide</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Contact</h2>
+      <address>
         <p>Accueil vie étudiante</p>
-        <p>02 00 00 00 00</p>
+        <p><a href="tel:+33200000000">02 00 00 00 00</a></p>
         <p>Lundi au vendredi, 9 h à 17 h</p>
-      </div>
-      <div>
-        <h2>Informations</h2>
-        <ul>
-          <li><a href="#">Accessibilité : partiellement conforme</a></li>
-          <li><a href="#">Mentions légales</a></li>
-          <li><a href="#">Plan du site</a></li>
-        </ul>
-      </div>
-    </div>
+      </address>
+    </section>
+    <section>
+      <h2>Informations</h2>
+      <ul>
+        <li><a href="#">Accessibilité : partiellement conforme</a></li>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Plan du site</a></li>
+      </ul>
+    </section>
     <p>© 2026 Portail des services</p>
   </footer>
 
