@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <title>Prêt de caméra - Portail des services</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html">Portail des services</a>
+      <nav aria-label="Principale">
+        <ul>
+          <li><a href="./services.html" aria-current="page">Services</a></li>
+          <li><a href="./espace.html#demandes">Mes demandes</a></li>
+          <li><a href="./aide.html">Aide</a></li>
+          <li><a href="./espace.html">Mon espace</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenu">
+        <nav aria-label="Fil d’Ariane">
+            <a href="./index.html">Accueil</a>
+            <span aria-hidden="true">›</span>
+            <a href="./services.html">Services</a>
+            <span aria-hidden="true">›</span>
+            <a href="./service.html?id=2" aria-current="page">Prêt de caméra</a>
+        </nav>
+
+        <article>
+            <img src="/img/camera-800.jpg" width="800" height="533" alt="">
+            <p>Prêt de matériel</p>
+            <h2>Prêt de caméra</h2>
+            <p>Une caméra hybride et deux objectifs, pour un tournage de cours ou de projet.</p>
+            <p>3 places</p> 
+
+            <dl>
+                <dt>Lieu</dt>
+                <dd>Bâtiment A, rez-de-chaussée</dd>
+                <dt>Délai</dt>
+                <dd>2 jours ouvrés</dd>
+                <dt>Place</dt>
+                <dd>3 disponibilités</dd>
+            </dl>
+
+            <p><a href="./espace.html#demandes">Faire une demande</a>
+                <button type="button">Ajouter aux favoris</button>
+            </p>
+
+            <h2>Le service en détail</h2>
+            <p>Le prêt dure trois jours ouvrés. Une courte prise en main est proposée au premier emprunt ; la batterie est rendue chargée.</p>
+        </article>
+
+        <aside aria-labelledby="titre-similaires">
+            <h2>Dans la même catégorie</h2>
+            <ul>
+                <li>
+                    <article>
+                        <img src="/img/materiel-800.jpg" width="800" height="533" alt="">
+                        <p>Prêt de matériel</p>
+                        <h3><a href="./service.html?id=1">Prêt de matériel</a></h3>
+                        <p>Empruntez un trépied, un micro ou une tablette graphique pour un projet. </p>
+                        <p>12 places</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <img src="/img/materiel-800.jpg" width="800" height="533" alt="">
+                        <p>Prêt de matériel</p>
+                        <h3><a href="./service.html?id=1">Prêt d'ordinateur Portable</a></h3>
+                        <p>Un portable pour la durée d'une réparation ou d'un examen sur machine</p>
+                        <p>Complet</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <img src="/img/materiel-800.jpg" width="800" height="533" alt="">
+                        <p>Prêt de matériel</p>
+                        <h3><a href="./service.html?id=1">Impression grand format</a></h3>
+                        <p>Affiche A1 et A0 pour une soutenance ou un salon</p>
+                        <p>20 places</p>
+                    </article>
+                </li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <section>
+            <h2>Le portail</h2>
+            <ul>
+                <li><a href="./services.html">Tous les services</a></li>
+                <li><a href="./espace.html#demandes">Mes demandes</a></li>
+                <li><a href="./aide.html">Aide</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Contact</h2>
+            <ul>
+                <li><a href="./mentions.html">Accueil vie étudiante</a></li>
+                <li><a href="./confidentialite.html">02 00 00 00 00</a></li>
+                <li><a href="./accessibilite.html">Lundi au vendredi, 9 h à 17 h</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Informations</h2>
+            <address>
+                <p>Accessibilité partiellement conforme</p>
+                <p>Mentions légales</p>
+                <p>Plan du site</p>
+            </address>  
+        </section>
+    </footer>
