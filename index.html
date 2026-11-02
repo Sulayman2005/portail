@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,4 +73,112 @@
   </footer>
 
 </body>
+=======
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <title>Portail des services</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html" aria-current="page">Portail des services</a>
+      <nav aria-label="Principale">
+        <ul>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./espace.html#demandes">Mes demandes</a></li>
+          <li><a href="./aide.html">Aide</a></li>
+          <li><a href="./espace.html">Mon espace</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenu">
+      <section>
+        <h1>Tous les services du campus, <span>au même endroit</span></h1>
+        <p>Prêt de matériel, salles, logement, sport, aides et santé : faites vos demandes en ligne.</p>
+
+        <form action="./services.html" role="search">
+          <label for="recherche">Rechercher un service</label>
+          <input type="search" id="recherche" name="q" placeholder="Rechercher un service…">
+          <button type="submit">Rechercher</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Parcourir par catégorie</h2>
+        <ul>
+          <li><a href="./services.html?categorie=materiel">Prêt de matériel</a> <span>4 services</span></li>
+          <li><a href="./services.html?categorie=salles">Salles</a> <span>3 services</span></li>
+          <li><a href="./services.html?categorie=logement">Logement</a> <span>3 services</span></li>
+          <li><a href="./services.html?categorie=sport">Sport</a> <span>3 services</span></li>
+          <li><a href="./services.html?categorie=aide">Aides</a> <span>2 services</span></li>
+          <li><a href="./services.html?categorie=sante">Santé</a> <span>2 services</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Services à la une</h2>
+        <ul>
+          <li>
+            <article>
+              <img src="/img/camera-800.jpg" width="800" height="533" alt="">
+              <p>Prêt de matériel</p>
+              <h3><a href="./service.html?id=2">Prêt de caméra</a></h3>
+              <p>Une caméra hybride et deux objectifs, pour un tournage de cours ou de projet.</p>
+              <p>3 places</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/img/salle-800.jpg" width="800" height="533" alt="">
+              <p>Salles</p>
+              <h3><a href="./service.html?id=5">Réservation de salle</a></h3>
+              <p>Une salle de travail de quatre à douze places, à l'heure.</p>
+              <p>8 places</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/img/sport-800.jpg" width="800" height="533" alt="">
+              <p>Sport</p>
+              <h3><a href="./service.html?id=11">Inscription au sport universitaire</a></h3>
+              <p>Une activité sportive par semestre, de l'escalade au volley.</p>
+              <p>40 places</p>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <section>
+        <h2>Le portail</h2>
+        <ul>
+          <li><a href="./services.html">Tous les services</a></li>
+          <li><a href="./espace.html#demandes">Mes demandes</a></li>
+          <li><a href="./aide.html">Aide</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <address>
+          <p>Accueil vie étudiante</p>
+          <p><a href="tel:+33200000000">02 00 00 00 00</a></p>
+          <p>Lundi au vendredi, 9 h à 17 h</p>
+        </address>
+      </section>
+      <section>
+        <h2>Informations</h2>
+        <ul>
+          <li><a href="./accessibilite.html">Accessibilité : partiellement conforme</a></li>
+          <li><a href="./mentions-legales.html">Mentions légales</a></li>
+          <li><a href="./plan.html">Plan du site</a></li>
+        </ul>
+      </section>
+      <p>© 2026 Portail des services</p>
+    </footer>
+  </body>
+
 </html>
