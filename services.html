@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <title>Portail des services</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html">Portail des services</a>
+      <nav aria-label="Principale">
+        <ul>
+          <li><a href="./services.html" aria-current="page">Services</a></li>
+          <li><a href="./espace.html#demandes">Mes demandes</a></li>
+          <li><a href="./aide.html">Aide</a></li>
+          <li><a href="./espace.html">Mon espace</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenu">
+      <section>
+        <h1>Tous les services du campus, <span>au même endroit</span></h1>
+        <p>Prêt de matériel, salles, logement, sport, aides et santé : faites vos demandes en ligne.</p>
+
+        <form action="./services.html" role="search">
+          <label for="recherche">Rechercher un service</label>
+          <input type="search" id="recherche" name="q" placeholder="Rechercher un service…">
+          <button type="submit">Rechercher</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Parcourir par catégorie</h2>
+        <ul>
+          <li><a href="./services.html?categorie=materiel">Prêt de matériel</a> <span>4 services</span></li>
+          <li><a href="./services.html?categorie=salles">Salles</a> <span>3 services</span></li>
+          <li><a href="./services.html?categorie=logement">Logement</a> <span>3 services</span></li>
+          <li><a href="./services.html?categorie=sport">Sport</a> <span>3 services</span></li>
+          <li><a href="./services.html?categorie=aide">Aides</a> <span>2 services</span></li>
+          <li><a href="./services.html?categorie=sante">Santé</a> <span>2 services</span></li>
+        </ul>
+      </section>
+      
