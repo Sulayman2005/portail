@@ -1,31 +1,75 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <title>Portail des services</title>
-    <script type="module" src="/src/main.js"></script>
-  </head>
-  <body>
-    <header>
-      <p>Portail des services</p>
-      <nav aria-label="Principale">
-        <ul>
-          <li><a href="./index.html" aria-current="page">Accueil</a></li>
-          <li><a href="./services.html">Services</a></li>
-          <li><a href="./espace.html">Mon espace</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portail des services</title>
+</head>
+<body>
 
-    <main id="contenu">
-      <h1>…</h1>
-      <!-- sections de l'accueil selon la maquette -->
-    </main>
+  <!-- En-tête et navigation -->
+  <header>
+    <div>
+      <span aria-hidden="true">■</span>
+      <span>Portail des services</span>
+    </div>
+    <nav aria-label="Principal">
+      <button type="button">Menu</button>
+    </nav>
+  </header>
 
-    <footer>
-      <p>…</p>
-    </footer>
-  </body>
+  <!-- Contenu principal -->
+  <main id="contenu">
+    
+    <!-- Section d'introduction et recherche -->
+    <section>
+      <h1>Tous les services du campus, au même endroit</h1>
+      <p>Prêt de matériel, salles, logement, sport, aides et santé : faites vos demandes en ligne.</p>
+      
+      <form action="#" method="get">
+        <label for="recherche">Rechercher un service...</label>
+        <input type="search" id="recherche" name="q" placeholder="Rechercher un service...">
+        <button type="submit">Rechercher</button>
+      </form>
+    </section>
+
+    <!-- Parcourir par catégorie -->
+    <section>
+      <h2>Parcourir par catégorie</h2>
+      <ul>
+        <li><a href="services.html?categorie=materiel">Prêt de matériel <span>4 services</span></a></li>
+        <li><a href="services.html?categorie=salles">Salles <span>3 services</span></a></li>
+        <li><a href="services.html?categorie=logement">Logement <span>3 services</span></a></li>
+        <li><a href="services.html?categorie=sport">Sport <span>3 services</span></a></li>
+        <li><a href="services.html?categorie=aides">Aides <span>2 services</span></a></li>
+        <li><a href="services.html?categorie=sante">Santé <span>2 services</span></a></li>
+      </ul>
+    </section>
+
+    <!-- Services à la une -->
+    <section>
+      <h2>Services à la une</h2>
+      <article>
+        <img src="/img/camera-800.jpg" alt="Appareil photo hybride avec deux objectifs sur fond clair" width="800" height="533">
+        <span>Prêt de matériel</span>
+        <h3><a href="./service.html?id=2">Prêt de caméra</a></h3>
+        <p>Une caméra hybride et deux objectifs, pour un tournage de cours ou de projet.</p>
+        <p>3 places</p>
+        <a href="./service.html?id=2">Voir la fiche</a>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer>
+    <ul>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Accessibilité : partiellement conforme</a></li>
+      <li><a href="#">Mentions légales</a></li>
+    </ul>
+    <p>© 2026 Portail des services</p>
+  </footer>
+
+</body>
 </html>
