@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <title>Portail des services</title>
+    <title>Services · Portail des services</title>
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
@@ -15,32 +15,190 @@
           <li><a href="./services.html" aria-current="page">Services</a></li>
           <li><a href="./espace.html#demandes">Mes demandes</a></li>
           <li><a href="./aide.html">Aide</a></li>
-          <li><a href="./espace.html">Mon espace</a></li>
+          <li><button href="./espace.html" type="button">Mon espace</button></li>
         </ul>
       </nav>
     </header>
 
     <main id="contenu">
-      <section>
-        <h1>Tous les services du campus, <span>au même endroit</span></h1>
-        <p>Prêt de matériel, salles, logement, sport, aides et santé : faites vos demandes en ligne.</p>
+        <nav aria-label="Fil d’Ariane">
+            <a href="./index.html">Accueil</a>
+            <span aria-hidden="true">›</span>
+            <a href="./services.html">Services</a>
+        </nav aria-label="Fil d’Ariane">
+
+        <h1>Services</h1>
+        <p>17 Services</p>
 
         <form action="./services.html" role="search">
-          <label for="recherche">Rechercher un service</label>
-          <input type="search" id="recherche" name="q" placeholder="Rechercher un service…">
-          <button type="submit">Rechercher</button>
+          <label for="trier">Trier par</label>
+          <select id="trier" name="trier">
+            <option value="nom">Nom, de A à Z</option>
+            <option value="nom">Nom, de Z à A</option>
+            <option value="categorie">Délai le plus court</option>
+            <option value="places">Places disponibles</option>
+          </select>
+          <button type="submit">Trier</button>
         </form>
-      </section>
 
-      <section>
-        <h2>Parcourir par catégorie</h2>
+        <aside>
+            <h2>Filtrer</h2>
+            <form action="./services.html" role="search">
+                <label for="recherche">Rechercher un service</label>
+                <input type="search" id="recherche" name="q">
+
+                <fieldset>
+                    <legend>Catégorie</legend>
+                    <ul>
+                        <li><input type="checkbox" id="materiel" name="categorie" value="materiel"><label for="materiel">Prêt de matériel</label></li>
+                        <li><input type="checkbox" id="salles" name="categorie" value="salles"><label for="salles">Salles</label></li>
+                        <li><input type="checkbox" id="logement" name="categorie" value="logement"><label for="logement">Logement</label></li>
+                        <li><input type="checkbox" id="sport" name="categorie" value="sport"><label for="sport">Sport</label></li>
+                        <li><input type="checkbox" id="aide" name="categorie" value="aide"><label for="aide">Aides</label></li>
+                        <li><input type="checkbox" id="sante" name="categorie" value="sante"><label for="sante">Santé</label></li>
+                    </ul>
+                </fieldset>
+
+                <input type="checkbox" id="disponibles" name="disponibles" value="disponibles">
+                <label for="disponibles">Disponibles</label>
+
+                <label for="delai">Délai de traitement</label>
+                <select id="delai" name="delai">
+                    <option value="" selected>Tous les délais</option>
+                    <option value="1">1 jour ouvré</option>
+                    <option value="3">3 jours ouvrés ou moins</option>
+                    <option value="5">5 jours ouvrés ou moins</option>
+                </select>
+
+                <button type="submit">Appliquer les filtres</button>
+                <a href="./services.html">Réinitialiser les filtres</a>
+            </form>
+        </aside>
+
+        <section aria-labelledby="titre-resultats">
+        <h2 id="titre-resultats">Résultats</h2>
         <ul>
-          <li><a href="./services.html?categorie=materiel">Prêt de matériel</a> <span>4 services</span></li>
-          <li><a href="./services.html?categorie=salles">Salles</a> <span>3 services</span></li>
-          <li><a href="./services.html?categorie=logement">Logement</a> <span>3 services</span></li>
-          <li><a href="./services.html?categorie=sport">Sport</a> <span>3 services</span></li>
-          <li><a href="./services.html?categorie=aide">Aides</a> <span>2 services</span></li>
-          <li><a href="./services.html?categorie=sante">Santé</a> <span>2 services</span></li>
+          <li>
+            <article>
+              <img src="/img/logement-800.jpg" width="800" height="533" alt="">
+              <p>Logement</p>
+              <h3><a href="./service.html?id=10">Accompagnement garantie locative</a></h3>
+              <p>Constituer votre demande de garantie locative avec un conseiller.</p>
+              <p>6 places</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/img/aide-800.jpg" width="800" height="533" alt="">
+              <p>Aides</p>
+              <h3><a href="./service.html?id=14">Aide d'urgence</a></h3>
+              <p>Une aide financière ponctuelle en cas de difficulté soudaine.</p>
+              <p>15 places</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/img/logement-800.jpg" width="800" height="533" alt="">
+              <p>Logement</p>
+              <h3><a href="./service.html?id=8">Aide à la recherche de logement</a></h3>
+              <p>Un rendez-vous pour cibler vos recherches et monter votre dossier.</p>
+              <p>10 places</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/img/colocation-800.jpg" width="800" height="533" alt="">
+              <p>Logement</p>
+              <h3><a href="./service.html?id=9">Colocation étudiante</a></h3>
+              <p>Trouver une chambre ou un colocataire parmi les étudiants du campus.</p>
+              <p>30 places</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/img/impression-800.jpg" width="800" height="533" alt="">
+              <p>Prêt de matériel</p>
+              <h3><a href="./service.html?id=4">Impression grand format</a></h3>
+              <p>Affiches A1 et A0 pour une soutenance ou un salon.</p>
+              <p>20 places</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/img/sport-800.jpg" width="800" height="533" alt="">
+              <p>Sport</p>
+              <h3><a href="./service.html?id=11">Inscription au sport universitaire</a></h3>
+              <p>Une activité sportive par semestre, de l'escalade au volley.</p>
+              <p>40 places</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/img/job-800.jpg" width="800" height="533" alt="">
+              <p>Aides</p>
+              <h3><a href="./service.html?id=15">Job étudiant sur le campus</a></h3>
+              <p>Des missions rémunérées à la bibliothèque, à l'accueil ou au tutorat.</p>
+              <p>9 places</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/img/portable-800.jpg" width="800" height="533" alt="">
+              <p>Prêt de matériel</p>
+              <h3><a href="./service.html?id=3">Prêt d'ordinateur portable</a></h3>
+              <p>Un portable pour la durée d'une réparation ou d'un examen sur machine.</p>
+              <p>Complet</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/img/camera-800.jpg" width="800" height="533" alt="">
+              <p>Prêt de matériel</p>
+              <h3><a href="./service.html?id=2">Prêt de caméra</a></h3>
+              <p>Une caméra hybride et deux objectifs, pour un tournage de cours ou de projet.</p>
+              <p>3 places</p>
+            </article>
+          </li>
+        </ul>
+
+        <nav aria-label="Pagination">
+          <ul>
+            <li><a aria-disabled="true">Page précédente</a></li>
+            <li><a href="./services.html?page=1" aria-current="page">1</a></li>
+            <li><a href="./services.html?page=2">2</a></li>
+            <li><a href="./services.html?page=2">Page suivante</a></li>
+          </ul>
+          <p>Page 1 sur 2</p>
+        </nav>
+      </section>
+    </main>
+
+    <footer>
+      <section>
+        <h2>Le portail</h2>
+        <ul>
+          <li><a href="./services.html">Tous les services</a></li>
+          <li><a href="./espace.html#demandes">Mes demandes</a></li>
+          <li><a href="./aide.html">Aide</a></li>
         </ul>
       </section>
-      
+      <section>
+        <h2>Contact</h2>
+        <address>
+          <p>Accueil vie étudiante</p>
+          <p><a href="tel:+33200000000">02 00 00 00 00</a></p>
+          <p>Lundi au vendredi, 9 h à 17 h</p>
+        </address>
+      </section>
+      <section>
+        <h2>Informations</h2>
+        <ul>
+          <li><a href="./accessibilite.html">Accessibilité : partiellement conforme</a></li>
+          <li><a href="./mentions-legales.html">Mentions légales</a></li>
+          <li><a href="./plan.html">Plan du site</a></li>
+        </ul>
+      </section>
+      <p>© 2026 Portail des services</p>
+    </footer>
+  </body>
+</html>
