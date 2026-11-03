@@ -3,62 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>Mes demandes · Portail des services</title>
+  <meta name="description" content="Suivez l'état de vos demandes de services et réglez vos préférences.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mes demandes">
+  <meta property="og:description" content="Suivez l'état de vos demandes de services et réglez vos préférences.">
+  <meta property="og:image" content="https://portail.example/img/camera-800.jpg">
+  <script type="module" src="/src/main.js"></script>
 </head>
 <body>
 
-  <!-- En-tête et navigation -->
   <header>
-    <div>
-      <span aria-hidden="true">■</span>
-      <span>Portail des services</span>
-    </div>
-    <nav aria-label="Principal">
+    <a href="./index.html"><span aria-hidden="true">■</span> Portail des services</a>
+    <nav aria-label="Principale">
       <ul>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="espace.html" aria-current="page">Mes demandes</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./espace.html#demandes" aria-current="page">Mes demandes</a></li>
         <li><a href="#">Aide</a></li>
-        <li><a href="espace.html">Mon espace</a></li>
+        <li><a href="./espace.html">Mon espace</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Contenu principal -->
   <main id="contenu">
     <h1>Mes demandes</h1>
     <p>Bonjour Camille. Voici vos demandes de ce semestre.</p>
 
-    <!-- Filtre de statut -->
     <form action="#" method="get" aria-label="Filtrer les demandes">
-      <div>
-        <label for="statut-filtre">Statut</label>
-        <select id="statut-filtre" name="statut">
-          <option value="tous" selected>Tous les statuts</option>
-          <option value="acceptee">Acceptée</option>
-          <option value="envoyee">Envoyée</option>
-          <option value="refusee">Refusée</option>
-        </select>
-      </div>
+      <label for="statut-filtre">Statut</label>
+      <select id="statut-filtre" name="statut">
+        <option value="tous" selected>Tous les statuts</option>
+        <option value="acceptee">Acceptée</option>
+        <option value="envoyee">Envoyée</option>
+        <option value="refusee">Refusée</option>
+      </select>
     </form>
 
-    <!-- Conteneur principal (tableau + préférences) -->
-    <div>
-
-      <!-- Tableau des demandes -->
-      <section aria-labelledby="titre-demandes">
-        <h2 id="titre-demandes">Liste des demandes</h2>
-        <table>
-          <caption>Suivi et historique de vos demandes de services</caption>
-          <thead>
-            <tr>
-              <th scope="col">Service</th>
-              <th scope="col">Date</th>
-              <th scope="col">Créneau</th>
-              <th scope="col">Statut</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
+    <section id="demandes" aria-labelledby="titre-demandes">
+      <h2 id="titre-demandes">Liste des demandes</h2>
+      <table>
+        <caption>Suivi et historique de vos demandes de services</caption>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Date</th>
+            <th scope="col">Créneau</th>
+            <th scope="col">Statut</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
             <tr>
               <th scope="row">Prêt de caméra</th>
               <td><time datetime="2026-10-14">14/10/2026</time></td>
@@ -71,9 +66,7 @@
               <td><time datetime="2026-10-15">15/10/2026</time></td>
               <td>Après-midi</td>
               <td>Envoyée</td>
-              <td>
-                <button type="button" aria-label="Annuler la demande Réservation de salle">Annuler</button>
-              </td>
+              <td><button type="button" aria-label="Annuler la demande Réservation de salle">Annuler</button></td>
             </tr>
             <tr>
               <th scope="row">Inscription au sport universitaire</th>
@@ -82,74 +75,52 @@
               <td>Refusée</td>
               <td></td>
             </tr>
-          </tbody>
-        </table>
-      </section>
+        </tbody>
+      </table>
+    </section>
 
-      <!-- Préférences utilisateur -->
-      <aside aria-labelledby="titre-preferences">
-        <h2 id="titre-preferences">Mes préférences</h2>
-
-        <form action="#" method="post">
-          <fieldset>
-            <legend>Thème</legend>
-
-            <div>
-              <label>
-                <input type="radio" name="theme" value="clair"> Clair
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="radio" name="theme" value="sombre"> Sombre
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="radio" name="theme" value="systeme" checked> Comme le système
-              </label>
-            </div>
-          </fieldset>
-
-          <div>
-            <label>
-              <input type="checkbox" name="masquer_complets" checked> Masquer les services complets
-            </label>
-          </div>
-
-          <p>Enregistrées sur cet appareil.</p>
-        </form>
-      </aside>
-
-    </div>
+    <aside aria-labelledby="titre-preferences">
+      <h2 id="titre-preferences">Mes préférences</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Thème</legend>
+          <div><label><input type="radio" name="theme" value="clair"> Clair</label></div>
+          <div><label><input type="radio" name="theme" value="sombre"> Sombre</label></div>
+          <div><label><input type="radio" name="theme" value="systeme" checked> Comme le système</label></div>
+        </fieldset>
+        <div>
+          <label><input type="checkbox" name="masquer_complets" checked> Masquer les services complets</label>
+        </div>
+        <p>Enregistrées sur cet appareil.</p>
+      </form>
+    </aside>
   </main>
 
-  <!-- Pied de page -->
   <footer>
-    <div>
-      <div>
-        <h2>Le portail</h2>
-        <ul>
-          <li><a href="services.html">Tous les services</a></li>
-          <li><a href="espace.html">Mes demandes</a></li>
-          <li><a href="#">Aide</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Contact</h2>
+    <section>
+      <h2>Le portail</h2>
+      <ul>
+        <li><a href="./services.html">Tous les services</a></li>
+        <li><a href="./espace.html#demandes">Mes demandes</a></li>
+        <li><a href="#">Aide</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Contact</h2>
+      <address>
         <p>Accueil vie étudiante</p>
-        <p>02 00 00 00 00</p>
+        <p><a href="tel:+33200000000">02 00 00 00 00</a></p>
         <p>Lundi au vendredi, 9 h à 17 h</p>
-      </div>
-      <div>
-        <h2>Informations</h2>
-        <ul>
-          <li><a href="#">Accessibilité : partiellement conforme</a></li>
-          <li><a href="#">Mentions légales</a></li>
-          <li><a href="#">Plan du site</a></li>
-        </ul>
-      </div>
-    </div>
+      </address>
+    </section>
+    <section>
+      <h2>Informations</h2>
+      <ul>
+        <li><a href="#">Accessibilité : partiellement conforme</a></li>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Plan du site</a></li>
+      </ul>
+    </section>
     <p>© 2026 Portail des services</p>
   </footer>
 
